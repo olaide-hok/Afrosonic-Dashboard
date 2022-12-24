@@ -1,4 +1,7 @@
 import {List, ListItem, VStack} from '@chakra-ui/react'
+import {Logo} from 'components/logo'
+import {navItems} from './nav-data'
+import NavItem from './nav-item'
 
 export const Sidebar = () => {
   return (
@@ -11,7 +14,17 @@ export const Sidebar = () => {
       borderRightWidth={2}
       flexShrink={0}>
       {/* Logo */}
-      <List width="full" overflowY="auto"></List>
+      <Logo />
+      <List width="full" overflowY="auto">
+        {navItems.map((item, index) => {
+          return (
+            <ListItem key={item.label}>
+              {/* NavItem */}
+              <NavItem item={item} isActive={index === 0} />
+            </ListItem>
+          )
+        })}
+      </List>
     </VStack>
   )
 }
