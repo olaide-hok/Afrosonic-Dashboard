@@ -1,4 +1,5 @@
 import {VStack, HStack} from '@chakra-ui/react'
+import {SearchBar} from 'components/search-bar'
 import {Sidebar} from 'components/sidebar'
 
 const Content = () => {
@@ -14,6 +15,7 @@ const Content = () => {
         spacing={6}
         overflow="hidden">
         {/* Search Bar */}
+        <SearchBar />
         {/* Genres Carousel */}
         <HStack width="full" alignItems="flex-start" overflow="hidden" flex={1}>
           {/* Top Picks */}
